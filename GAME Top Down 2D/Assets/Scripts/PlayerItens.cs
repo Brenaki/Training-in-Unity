@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class PlayerItens : MonoBehaviour
 {
+    [Header("Amouts")]
     [SerializeField] private int totalWood;
     [SerializeField] private float currentWater;
-    private float waterLimit = 50;
+    [SerializeField] private int carrots;
 
-    public int TotalWood { 
+    [Header("Limits")]
+    public float waterLimit = 50;
+    public float carrotLimit = 10;
+    public float woodLimit = 5;
+
+    public int TotalWood 
+    { 
         get => totalWood; 
         set => totalWood = value; 
     }
@@ -17,11 +24,32 @@ public class PlayerItens : MonoBehaviour
         get => currentWater; 
         set => currentWater = value; 
     }
+    public int Carrots 
+    { 
+        get => carrots; 
+        set => carrots = value; 
+    }
+
+    public float WaterLimit1
+    { 
+        get => waterLimit; 
+        set => waterLimit = value; 
+    }
+    public float CarrotLimit 
+    { 
+        get => carrotLimit; 
+        set => carrotLimit = value; 
+    }
+    public float WoodLimit 
+    { 
+        get => woodLimit; 
+        set => woodLimit = value; 
+    }
 
     public void WaterLimit(float water)
     {
 
-        if(currentWater <= waterLimit)
+        if(currentWater <= WaterLimit1)
         {
 
             currentWater += water;
